@@ -1,0 +1,1968 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Notice Dashboard For Student</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+
+    <!-- ================== BEGIN core-css ================== -->
+    <link href="https://erp.psit.ac.in/assets/css/vendor.min.css" rel="stylesheet" />
+    <link href="https://erp.psit.ac.in/assets/css/material/app.min.css" rel="stylesheet" />
+    <!-- ================== END core-css ================== -->
+
+    <!-- ================== BEGIN page-css ================== -->
+    <link href="https://erp.psit.ac.in/assets/plugins/datatables.net-bs5/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
+    <link href="https://erp.psit.ac.in/assets/plugins/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css" rel="stylesheet" />
+    <!-- ================== END page-css ================== -->
+
+    <!-- custom css file -->
+    <link href="https://erp.psit.ac.in/assets/css/custom/custom.css" rel="stylesheet" />
+    <!-- /custom css file -->
+</head>
+
+<body class='pace-top'>
+    <!-- BEGIN #loader -->
+    <div id="loader" class="app-loader">
+        <div class="material-loader">
+            <svg class="circular" viewBox="25 25 50 50">
+                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"></circle>
+            </svg>
+            <div class="message">Loading...</div>
+        </div>
+    </div>
+    <!-- END #loader -->
+    <!-- BEGIN #app -->
+    <div id="app" class="app">
+        <!-- BEGIN login -->
+        <div class="login login-with-news-feed">
+            <div class="news-feed">
+                <div class="news-image" style="background-image: url(https://images.unsplash.com/photo-1562097365-e24bb4c0479c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)"></div>
+                <div class="d-flex flex-column justify-content-between h-100  position-relative" style="z-index:21">
+                    <div class="p-3 flex-1" style="overflow: auto;" data-scrollbar="true" data-height="100%">
+                        <div class="panel panel-inverse panel-with-tabs" data-sortable-id="ui-unlimited-tabs-1"
+                            style="background-color: #fffffff2 !important; border-radius: 0px; 0px; 8px; 8px !important; ">
+                            <div class="panel-heading ui-sortable-handle" style="background-color:#00BCD4; ">
+                                <h4 class="panel-title">
+                                    <b class="badge  d-inline-flex align-items-center   fs-14px">
+                                        <i class="fa fa-circle fa-fw fs-6px text-teal me-1"></i>
+                                        <i class="fa fa-circle fa-fw fs-6px text-warning me-1"></i>
+                                        <i class="fa fa-circle fa-fw fs-6px text-danger me-2"></i>
+                                        Notice Board
+                                    </b>
+                                </h4>
+                                <div class="panel-heading-btn">
+                                    <a href="javascript:;" class="btn btn-xs btn-icon btn-default" data-toggle="panel-expand"><i class="fa fa-expand"></i></a>
+                                    <a href="javascript:;" class="btn btn-xs btn-icon btn-success" data-toggle="panel-reload"><i class="fa fa-redo"></i></a>
+                                    <a href="javascript:;" class="btn btn-xs btn-icon btn-warning" data-toggle="panel-collapse"><i class="fa fa-minus"></i></a>
+                                    <a href="javascript:;" class="btn btn-xs btn-icon btn-danger" data-toggle="panel-remove"><i class="fa fa-times"></i></a>
+                                </div>
+                            </div>
+
+                            <!-- <div class="alert alert-success   alert-dismissible fade show h-100 mb-0   ">
+                                <strong>Success!</strong>
+                                This is a success alert with <a href="#" class="alert-link">an example link</a>.
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            </div> -->
+
+                            <!-- BEGIN nav-tabs -->
+                            <div class="tab-overflow">
+                                <ul class="nav nav-tabs ">
+                                    <li class="nav-item prev-button">
+                                        <a href="javascript:;" data-click="prev-tab" class="nav-link text-primary">
+                                            <i class="fa fa-arrow-left" style="padding: 3px;"></i>
+                                        </a>
+                                    </li>
+
+
+                                    <li class="nav-item"><a href="#nav-tab-1" data-bs-toggle="tab" class="nav-link active">PSIT</a></li>
+
+
+                                    <li class="nav-item"><a href="#nav-tab-3" data-bs-toggle="tab" class="nav-link">Helpline</a></li>
+
+                                    <li class="nav-item next-button">
+                                        <a href="javascript:;" data-click="next-tab" class="nav-link text-primary">
+                                            <i class="fa fa-arrow-right" style="padding: 3px;"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="panel-body tab-content panel rounded-0 p-0 m-0 overflow-y-auto">
+                                <div class="tab-pane fade active show" id="nav-tab-1">
+                                    <div>
+                                        <div class="d-flex justify-content-between align-items-center" style="padding: 0px 24px; border-bottom: 1px dashed #f3f1f1; border-top: 1px dashed #e3e3e3; ">
+                                            <ul class="nav nav-tabs noticeTab" id="myTab" role="tablist">
+                                                <li class="nav-item" role="presentation">
+                                                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Notice Board</button>
+                                                </li>
+                                                <li class="nav-item" role="">
+                                                    <a href="https://erp.psit.ac.in/Student/AcademicPlan/1" class="nav-link">Academic Plan</a>
+                                                </li>
+                                                <li class="nav-item" role="">
+                                                    <a href="https://erp.psit.ac.in/Student/PaperPattern/1" class="nav-link">Paper Pattern</a>
+                                                </li>
+                                                <li class="nav-item" role="">
+                                                    <a href="https://erp.psit.ac.in/Student/ExamCalender/1" class="nav-link">Exam Calendar</a>
+                                                </li>
+                                                <li class="nav-item" role="">
+                                                    <a href="https://erp.psit.ac.in/Student/CoordinatorList/1" class="nav-link">Coordinator List</a>
+                                                </li>
+                                                <li class="nav-item" role="">
+                                                                                                        <a href="https://erp.psit.ac.in/assets/Guidebook/GuidebookPSIT2024_25_new.pdf" target="_blank" class="nav-link">Guidebook</a>
+                                                </li>
+                                                                                            </ul>
+                                            &nbsp;
+                                        </div>
+                                        <div class="tab-content" id="myTabContent">
+                                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                                <style>
+    #searchNotices {
+        position: relative;
+        overflow: auto;
+
+        /* or your desired height */
+    }
+
+    .sticky1 {
+        position: fixed;
+        /* bottom: 250px; */
+        top: 100px;
+        right: 15px;
+        z-index: 10;
+    }
+</style>
+
+
+
+<div class="searchNotices">
+    <div align="right" class="p-1 sticky1">
+        <a class="btn gd-primary btn-sm "
+            href=" https://erp.psit.ac.in/Student/NoticeArchive/1"
+            target="_blank"><i class="fa fa-cog fa-spin fa-1x fa-fw margin-bottom"></i>&nbsp;Archive</a>
+    </div>
+
+    <div style="border-bottom: 1px dashed #f3f1f1;">
+        <div class="inputs">
+            <i class="fa fa-search"></i>
+            <!-- <input type="text" class="form-control " placeholder="Search Notices..."> -->
+            <input type="text" id="searchNotices" class="form-control" placeholder="Search Notices..." style="background: aliceblue;">
+        </div>
+    </div>
+    <div class="list list-row" id="noticesList">
+
+                
+
+
+
+        
+            <div  style="cursor: pointer;" onclick="window.location.href = 'https://erp.psit.ac.in/assets/Notice/09012b8cc2db0976f3fb0b0e9d80b09d.pdf'"
+class='list-item' data-name='Bus Route for faculty, staff &amp; students from 29th,Sep 2025.'>
+                <div><a href='https://erp.psit.ac.in/assets/Notice/09012b8cc2db0976f3fb0b0e9d80b09d.pdf' style='text-decoration: none;'><span class='w-40 avatar gd-primary'>1</span></a></div>
+                <div class='flex'>
+                    <a href='https://erp.psit.ac.in/assets/Notice/09012b8cc2db0976f3fb0b0e9d80b09d.pdf' class='item-author text-color'>Bus Route for faculty, staff & students from 29th,Sep 2025.</a>
+                    <div class='item-except text-muted text-sm h-1x'> 27/09/25 17:31 pm</div>
+                </div>
+                <div class='no-wrap'>
+                    <div class='item-date badge gd-primary' ></div>
+                </div> 
+            </div>
+            <div  style="cursor: pointer;" onclick="window.location.href = 'https://erp.psit.ac.in/assets/Notice/3355fde1dd9963bea9338380d304a09b.pdf'"
+class='list-item' data-name='List of students who have not provided their ABC ID so far.'>
+                <div><a href='https://erp.psit.ac.in/assets/Notice/3355fde1dd9963bea9338380d304a09b.pdf' style='text-decoration: none;'><span class='w-40 avatar gd-primary'>2</span></a></div>
+                <div class='flex'>
+                    <a href='https://erp.psit.ac.in/assets/Notice/3355fde1dd9963bea9338380d304a09b.pdf' class='item-author text-color'>List of students who have not provided their ABC ID so far.</a>
+                    <div class='item-except text-muted text-sm h-1x'> 27/09/25 17:18 pm</div>
+                </div>
+                <div class='no-wrap'>
+                    <div class='item-date badge gd-primary' ></div>
+                </div> 
+            </div>
+            <div  style="cursor: pointer;" onclick="window.location.href = 'https://erp.psit.ac.in/assets/Notice/7679422d9d73e4c501c76ebb1a18dafb.pdf'"
+class='list-item' data-name='Hostel Anti Ragging Committee 2025-26'>
+                <div><a href='https://erp.psit.ac.in/assets/Notice/7679422d9d73e4c501c76ebb1a18dafb.pdf' style='text-decoration: none;'><span class='w-40 avatar gd-primary'>3</span></a></div>
+                <div class='flex'>
+                    <a href='https://erp.psit.ac.in/assets/Notice/7679422d9d73e4c501c76ebb1a18dafb.pdf' class='item-author text-color'>Hostel Anti Ragging Committee 2025-26</a>
+                    <div class='item-except text-muted text-sm h-1x'> 27/09/25 17:14 pm</div>
+                </div>
+                <div class='no-wrap'>
+                    <div class='item-date badge gd-primary' ></div>
+                </div> 
+            </div>
+            <div  style="cursor: pointer;" onclick="window.location.href = 'https://erp.psit.ac.in/assets/Notice/f0a3894a452d85f0629d5d9d598e48f5.PDF'"
+class='list-item' data-name='Online Test (OLT) for B.Tech-2nd year students'>
+                <div><a href='https://erp.psit.ac.in/assets/Notice/f0a3894a452d85f0629d5d9d598e48f5.PDF' style='text-decoration: none;'><span class='w-40 avatar gd-primary'>4</span></a></div>
+                <div class='flex'>
+                    <a href='https://erp.psit.ac.in/assets/Notice/f0a3894a452d85f0629d5d9d598e48f5.PDF' class='item-author text-color'>Online Test (OLT) for B.Tech-2nd year students</a>
+                    <div class='item-except text-muted text-sm h-1x'> 26/09/25 19:00 pm</div>
+                </div>
+                <div class='no-wrap'>
+                    <div class='item-date badge gd-primary' ></div>
+                </div> 
+            </div>
+            <div  style="cursor: pointer;" onclick="window.location.href = 'https://erp.psit.ac.in/assets/Notice/84dfadbd33ef8147cd44eb8a375f2272.PDF'"
+class='list-item' data-name='Online Test (OLT) for B.Tech-3rd year students'>
+                <div><a href='https://erp.psit.ac.in/assets/Notice/84dfadbd33ef8147cd44eb8a375f2272.PDF' style='text-decoration: none;'><span class='w-40 avatar gd-primary'>5</span></a></div>
+                <div class='flex'>
+                    <a href='https://erp.psit.ac.in/assets/Notice/84dfadbd33ef8147cd44eb8a375f2272.PDF' class='item-author text-color'>Online Test (OLT) for B.Tech-3rd year students</a>
+                    <div class='item-except text-muted text-sm h-1x'> 26/09/25 18:59 pm</div>
+                </div>
+                <div class='no-wrap'>
+                    <div class='item-date badge gd-primary' ></div>
+                </div> 
+            </div>
+            <div  style="cursor: pointer;" onclick="window.location.href = 'https://erp.psit.ac.in/assets/Notice/200a1f905ec4d7db9486a1b1ba109236.PDF'"
+class='list-item' data-name='Important Orientation Session for newly admitted B.Tech-1st year students'>
+                <div><a href='https://erp.psit.ac.in/assets/Notice/200a1f905ec4d7db9486a1b1ba109236.PDF' style='text-decoration: none;'><span class='w-40 avatar gd-primary'>6</span></a></div>
+                <div class='flex'>
+                    <a href='https://erp.psit.ac.in/assets/Notice/200a1f905ec4d7db9486a1b1ba109236.PDF' class='item-author text-color'>Important Orientation Session for newly admitted B.Tech-1st year students</a>
+                    <div class='item-except text-muted text-sm h-1x'> 26/09/25 17:21 pm</div>
+                </div>
+                <div class='no-wrap'>
+                    <div class='item-date badge gd-primary' ></div>
+                </div> 
+            </div>
+            <div  style="cursor: pointer;" onclick="window.location.href = 'https://erp.psit.ac.in/assets/Notice/43b08b5772bcba5904ae2e04e3401ca2.pdf'"
+class='list-item' data-name='BUS ROUTE FOR FACULTY &amp; STAFF 27TH SEP 2025.'>
+                <div><a href='https://erp.psit.ac.in/assets/Notice/43b08b5772bcba5904ae2e04e3401ca2.pdf' style='text-decoration: none;'><span class='w-40 avatar gd-primary'>7</span></a></div>
+                <div class='flex'>
+                    <a href='https://erp.psit.ac.in/assets/Notice/43b08b5772bcba5904ae2e04e3401ca2.pdf' class='item-author text-color'>BUS ROUTE FOR FACULTY & STAFF 27TH SEP 2025.</a>
+                    <div class='item-except text-muted text-sm h-1x'> 26/09/25 16:49 pm</div>
+                </div>
+                <div class='no-wrap'>
+                    <div class='item-date badge gd-primary' ></div>
+                </div> 
+            </div>
+            <div  style="cursor: pointer;" onclick="window.location.href = 'https://erp.psit.ac.in/assets/Notice/717db53c4af9c20f18665656678e0dd4.pdf'"
+class='list-item' data-name='Revised Class Test–1 Schedule for B.Tech 2nd &amp; 3rd Year Students (Odd Semester 2025–26)'>
+                <div><a href='https://erp.psit.ac.in/assets/Notice/717db53c4af9c20f18665656678e0dd4.pdf' style='text-decoration: none;'><span class='w-40 avatar gd-primary'>8</span></a></div>
+                <div class='flex'>
+                    <a href='https://erp.psit.ac.in/assets/Notice/717db53c4af9c20f18665656678e0dd4.pdf' class='item-author text-color'>Revised Class Test–1 Schedule for B.Tech 2nd & 3rd Year Students (Odd Semester 2025–26)</a>
+                    <div class='item-except text-muted text-sm h-1x'> 25/09/25 15:34 pm</div>
+                </div>
+                <div class='no-wrap'>
+                    <div class='item-date badge gd-primary' ></div>
+                </div> 
+            </div>
+            <div  style="cursor: pointer;" onclick="window.location.href = 'https://erp.psit.ac.in/assets/Notice/5a9d8ff56753db320df124239d74bbf9.PDF'"
+class='list-item' data-name='Wearing Institute ID-Card during Institute Hours'>
+                <div><a href='https://erp.psit.ac.in/assets/Notice/5a9d8ff56753db320df124239d74bbf9.PDF' style='text-decoration: none;'><span class='w-40 avatar gd-primary'>9</span></a></div>
+                <div class='flex'>
+                    <a href='https://erp.psit.ac.in/assets/Notice/5a9d8ff56753db320df124239d74bbf9.PDF' class='item-author text-color'>Wearing Institute ID-Card during Institute Hours</a>
+                    <div class='item-except text-muted text-sm h-1x'> 25/09/25 14:10 pm</div>
+                </div>
+                <div class='no-wrap'>
+                    <div class='item-date badge gd-primary' ></div>
+                </div> 
+            </div>
+            <div  style="cursor: pointer;" onclick="window.location.href = 'https://erp.psit.ac.in/assets/Notice/63691b9198074f65e5340c64dfd96e10.PDF'"
+class='list-item' data-name='Safety Rule for Crossing the Highway'>
+                <div><a href='https://erp.psit.ac.in/assets/Notice/63691b9198074f65e5340c64dfd96e10.PDF' style='text-decoration: none;'><span class='w-40 avatar gd-primary'>10</span></a></div>
+                <div class='flex'>
+                    <a href='https://erp.psit.ac.in/assets/Notice/63691b9198074f65e5340c64dfd96e10.PDF' class='item-author text-color'>Safety Rule for Crossing the Highway</a>
+                    <div class='item-except text-muted text-sm h-1x'> 24/09/25 17:45 pm</div>
+                </div>
+                <div class='no-wrap'>
+                    <div class='item-date badge gd-primary' ></div>
+                </div> 
+            </div>
+            <div  style="cursor: pointer;" onclick="window.location.href = 'https://erp.psit.ac.in/assets/Notice/4593da054eb5f66234950a263e5b1af5.pdf'"
+class='list-item' data-name='Important Notice- Pertaining to ABC ID for all the second Year Students, session 2025-26-'>
+                <div><a href='https://erp.psit.ac.in/assets/Notice/4593da054eb5f66234950a263e5b1af5.pdf' style='text-decoration: none;'><span class='w-40 avatar gd-primary'>11</span></a></div>
+                <div class='flex'>
+                    <a href='https://erp.psit.ac.in/assets/Notice/4593da054eb5f66234950a263e5b1af5.pdf' class='item-author text-color'>Important Notice- Pertaining to ABC ID for all the second Year Students, session 2025-26-</a>
+                    <div class='item-except text-muted text-sm h-1x'> 24/09/25 14:45 pm</div>
+                </div>
+                <div class='no-wrap'>
+                    <div class='item-date badge gd-primary' ></div>
+                </div> 
+            </div>
+            <div  style="cursor: pointer;" onclick="window.location.href = 'https://erp.psit.ac.in/assets/Notice/3dece13ed45d16995fea1f44675b741b.pdf'"
+class='list-item' data-name='PROCTORIAL BOARD &amp; HELPLINE NUMBERS (SESSION 2025-26)'>
+                <div><a href='https://erp.psit.ac.in/assets/Notice/3dece13ed45d16995fea1f44675b741b.pdf' style='text-decoration: none;'><span class='w-40 avatar gd-primary'>12</span></a></div>
+                <div class='flex'>
+                    <a href='https://erp.psit.ac.in/assets/Notice/3dece13ed45d16995fea1f44675b741b.pdf' class='item-author text-color'>PROCTORIAL BOARD & HELPLINE NUMBERS (SESSION 2025-26)</a>
+                    <div class='item-except text-muted text-sm h-1x'> 20/09/25 16:32 pm</div>
+                </div>
+                <div class='no-wrap'>
+                    <div class='item-date badge gd-primary' ></div>
+                </div> 
+            </div>
+            <div  style="cursor: pointer;" onclick="window.location.href = 'https://erp.psit.ac.in/assets/Notice/e7b9709ee6147f663a66a8fa775b2c7a.PDF'"
+class='list-item' data-name='COMMENCEMENT OF ACADEMIC CLASSES OF MBA-1st Year &amp;      MCA-1st Year (ODD SEMESTER  2025-26)'>
+                <div><a href='https://erp.psit.ac.in/assets/Notice/e7b9709ee6147f663a66a8fa775b2c7a.PDF' style='text-decoration: none;'><span class='w-40 avatar gd-primary'>13</span></a></div>
+                <div class='flex'>
+                    <a href='https://erp.psit.ac.in/assets/Notice/e7b9709ee6147f663a66a8fa775b2c7a.PDF' class='item-author text-color'>COMMENCEMENT OF ACADEMIC CLASSES OF MBA-1st Year &      MCA-1st Year (ODD SEMESTER  2025-26)</a>
+                    <div class='item-except text-muted text-sm h-1x'> 19/09/25 18:25 pm</div>
+                </div>
+                <div class='no-wrap'>
+                    <div class='item-date badge gd-primary' ></div>
+                </div> 
+            </div>
+            <div  style="cursor: pointer;" onclick="window.location.href = 'https://erp.psit.ac.in/assets/Notice/2f25a813c7e6cf3e618fa9b5e1357ee5.pdf'"
+class='list-item' data-name='NOTICE - LOST &amp; FOUND'>
+                <div><a href='https://erp.psit.ac.in/assets/Notice/2f25a813c7e6cf3e618fa9b5e1357ee5.pdf' style='text-decoration: none;'><span class='w-40 avatar gd-primary'>14</span></a></div>
+                <div class='flex'>
+                    <a href='https://erp.psit.ac.in/assets/Notice/2f25a813c7e6cf3e618fa9b5e1357ee5.pdf' class='item-author text-color'>NOTICE - LOST & FOUND</a>
+                    <div class='item-except text-muted text-sm h-1x'> 19/09/25 14:37 pm</div>
+                </div>
+                <div class='no-wrap'>
+                    <div class='item-date badge gd-primary' ></div>
+                </div> 
+            </div>
+            <div  style="cursor: pointer;" onclick="window.location.href = 'https://erp.psit.ac.in/assets/Notice/0f71f799ca92c7c60520b852524eff93.pdf'"
+class='list-item' data-name='Constitution of SC, ST &amp; OBC Committee (Session 2025-26)'>
+                <div><a href='https://erp.psit.ac.in/assets/Notice/0f71f799ca92c7c60520b852524eff93.pdf' style='text-decoration: none;'><span class='w-40 avatar gd-primary'>15</span></a></div>
+                <div class='flex'>
+                    <a href='https://erp.psit.ac.in/assets/Notice/0f71f799ca92c7c60520b852524eff93.pdf' class='item-author text-color'>Constitution of SC, ST & OBC Committee (Session 2025-26)</a>
+                    <div class='item-except text-muted text-sm h-1x'> 16/09/25 16:26 pm</div>
+                </div>
+                <div class='no-wrap'>
+                    <div class='item-date badge gd-primary' ></div>
+                </div> 
+            </div>
+            <div  style="cursor: pointer;" onclick="window.location.href = 'https://erp.psit.ac.in/assets/Notice/79d42b1c0896b950eb14bb8840ef143e.pdf'"
+class='list-item' data-name='Establishment of Equal Opportunity Cell (Session 2025-26)'>
+                <div><a href='https://erp.psit.ac.in/assets/Notice/79d42b1c0896b950eb14bb8840ef143e.pdf' style='text-decoration: none;'><span class='w-40 avatar gd-primary'>16</span></a></div>
+                <div class='flex'>
+                    <a href='https://erp.psit.ac.in/assets/Notice/79d42b1c0896b950eb14bb8840ef143e.pdf' class='item-author text-color'>Establishment of Equal Opportunity Cell (Session 2025-26)</a>
+                    <div class='item-except text-muted text-sm h-1x'> 16/09/25 16:26 pm</div>
+                </div>
+                <div class='no-wrap'>
+                    <div class='item-date badge gd-primary' ></div>
+                </div> 
+            </div>
+            <div  style="cursor: pointer;" onclick="window.location.href = 'https://erp.psit.ac.in/assets/Notice/58ee6097cd0ac04ca1e8fdc5be9fd3fa.pdf'"
+class='list-item' data-name='Constitution of Anti Ragging Committee (Session 2025-26)'>
+                <div><a href='https://erp.psit.ac.in/assets/Notice/58ee6097cd0ac04ca1e8fdc5be9fd3fa.pdf' style='text-decoration: none;'><span class='w-40 avatar gd-primary'>17</span></a></div>
+                <div class='flex'>
+                    <a href='https://erp.psit.ac.in/assets/Notice/58ee6097cd0ac04ca1e8fdc5be9fd3fa.pdf' class='item-author text-color'>Constitution of Anti Ragging Committee (Session 2025-26)</a>
+                    <div class='item-except text-muted text-sm h-1x'> 16/09/25 16:19 pm</div>
+                </div>
+                <div class='no-wrap'>
+                    <div class='item-date badge gd-primary' ></div>
+                </div> 
+            </div>
+            <div  style="cursor: pointer;" onclick="window.location.href = 'https://erp.psit.ac.in/assets/Notice/0782eab805472591bb0a03224bc1438f.pdf'"
+class='list-item' data-name='AKTU Circular Regarding Apply for Challenge Evaluation for odd Semester 2024-25 Phase-II'>
+                <div><a href='https://erp.psit.ac.in/assets/Notice/0782eab805472591bb0a03224bc1438f.pdf' style='text-decoration: none;'><span class='w-40 avatar gd-primary'>18</span></a></div>
+                <div class='flex'>
+                    <a href='https://erp.psit.ac.in/assets/Notice/0782eab805472591bb0a03224bc1438f.pdf' class='item-author text-color'>AKTU Circular Regarding Apply for Challenge Evaluation for odd Semester 2024-25 Phase-II</a>
+                    <div class='item-except text-muted text-sm h-1x'> 16/09/25 15:53 pm</div>
+                </div>
+                <div class='no-wrap'>
+                    <div class='item-date badge gd-primary' ></div>
+                </div> 
+            </div>
+            <div  style="cursor: pointer;" onclick="window.location.href = 'https://erp.psit.ac.in/assets/Notice/1c13b4962ec9c38c23ef1fbe9e4bc6db.pdf'"
+class='list-item' data-name='AKTU Circular Regarding Activation of Free Altair Student Edition Software for Students.'>
+                <div><a href='https://erp.psit.ac.in/assets/Notice/1c13b4962ec9c38c23ef1fbe9e4bc6db.pdf' style='text-decoration: none;'><span class='w-40 avatar gd-primary'>19</span></a></div>
+                <div class='flex'>
+                    <a href='https://erp.psit.ac.in/assets/Notice/1c13b4962ec9c38c23ef1fbe9e4bc6db.pdf' class='item-author text-color'>AKTU Circular Regarding Activation of Free Altair Student Edition Software for Students.</a>
+                    <div class='item-except text-muted text-sm h-1x'> 16/09/25 15:49 pm</div>
+                </div>
+                <div class='no-wrap'>
+                    <div class='item-date badge gd-primary' ></div>
+                </div> 
+            </div>
+            <div  style="cursor: pointer;" onclick="window.location.href = 'https://erp.psit.ac.in/assets/Notice/c7d72344f2ba98e5f3edb2d2f38de13a.PDF'"
+class='list-item' data-name='Commencement of Academic Classes of B.Tech-1st Year (Odd Sem. 2025-26)'>
+                <div><a href='https://erp.psit.ac.in/assets/Notice/c7d72344f2ba98e5f3edb2d2f38de13a.PDF' style='text-decoration: none;'><span class='w-40 avatar gd-primary'>20</span></a></div>
+                <div class='flex'>
+                    <a href='https://erp.psit.ac.in/assets/Notice/c7d72344f2ba98e5f3edb2d2f38de13a.PDF' class='item-author text-color'>Commencement of Academic Classes of B.Tech-1st Year (Odd Sem. 2025-26)</a>
+                    <div class='item-except text-muted text-sm h-1x'> 13/09/25 18:17 pm</div>
+                </div>
+                <div class='no-wrap'>
+                    <div class='item-date badge gd-primary' ></div>
+                </div> 
+            </div>
+            <div  style="cursor: pointer;" onclick="window.location.href = 'https://erp.psit.ac.in/assets/Notice/3f84aafae3ea5777be48392209d6a684.PDF'"
+class='list-item' data-name='Notice for Hostel Shifting for B.Tech-2nd Year (Boys)'>
+                <div><a href='https://erp.psit.ac.in/assets/Notice/3f84aafae3ea5777be48392209d6a684.PDF' style='text-decoration: none;'><span class='w-40 avatar gd-primary'>21</span></a></div>
+                <div class='flex'>
+                    <a href='https://erp.psit.ac.in/assets/Notice/3f84aafae3ea5777be48392209d6a684.PDF' class='item-author text-color'>Notice for Hostel Shifting for B.Tech-2nd Year (Boys)</a>
+                    <div class='item-except text-muted text-sm h-1x'> 13/09/25 18:14 pm</div>
+                </div>
+                <div class='no-wrap'>
+                    <div class='item-date badge gd-primary' ></div>
+                </div> 
+            </div>
+            <div  style="cursor: pointer;" onclick="window.location.href = 'https://erp.psit.ac.in/assets/Notice/e2f2f5fa44831df52b8011c2cabf9935.PDF'"
+class='list-item' data-name='Reschedule for CT-1st Examination for B.Tech-2nd &amp; 3rd year students'>
+                <div><a href='https://erp.psit.ac.in/assets/Notice/e2f2f5fa44831df52b8011c2cabf9935.PDF' style='text-decoration: none;'><span class='w-40 avatar gd-primary'>22</span></a></div>
+                <div class='flex'>
+                    <a href='https://erp.psit.ac.in/assets/Notice/e2f2f5fa44831df52b8011c2cabf9935.PDF' class='item-author text-color'>Reschedule for CT-1st Examination for B.Tech-2nd & 3rd year students</a>
+                    <div class='item-except text-muted text-sm h-1x'> 13/09/25 18:12 pm</div>
+                </div>
+                <div class='no-wrap'>
+                    <div class='item-date badge gd-primary' ></div>
+                </div> 
+            </div>
+            <div  style="cursor: pointer;" onclick="window.location.href = 'https://erp.psit.ac.in/assets/Notice/851d8281d4d29590f0172c156b035c18.PDF'"
+class='list-item' data-name='Notice for Special Hackathon (B.Tech-3rd year)'>
+                <div><a href='https://erp.psit.ac.in/assets/Notice/851d8281d4d29590f0172c156b035c18.PDF' style='text-decoration: none;'><span class='w-40 avatar gd-primary'>23</span></a></div>
+                <div class='flex'>
+                    <a href='https://erp.psit.ac.in/assets/Notice/851d8281d4d29590f0172c156b035c18.PDF' class='item-author text-color'>Notice for Special Hackathon (B.Tech-3rd year)</a>
+                    <div class='item-except text-muted text-sm h-1x'> 12/09/25 15:12 pm</div>
+                </div>
+                <div class='no-wrap'>
+                    <div class='item-date badge gd-primary' ></div>
+                </div> 
+            </div>
+            <div  style="cursor: pointer;" onclick="window.location.href = 'https://erp.psit.ac.in/assets/Notice/7e8deb4c2b2024965738429bab142cd5.pdf'"
+class='list-item' data-name='Tech Expo-2K25'>
+                <div><a href='https://erp.psit.ac.in/assets/Notice/7e8deb4c2b2024965738429bab142cd5.pdf' style='text-decoration: none;'><span class='w-40 avatar gd-primary'>24</span></a></div>
+                <div class='flex'>
+                    <a href='https://erp.psit.ac.in/assets/Notice/7e8deb4c2b2024965738429bab142cd5.pdf' class='item-author text-color'>Tech Expo-2K25</a>
+                    <div class='item-except text-muted text-sm h-1x'> 10/09/25 18:29 pm</div>
+                </div>
+                <div class='no-wrap'>
+                    <div class='item-date badge gd-primary' ></div>
+                </div> 
+            </div>
+            <div  style="cursor: pointer;" onclick="window.location.href = 'https://erp.psit.ac.in/assets/Notice/1e0d9f05c04f9d78606b257124a0d509.pdf'"
+class='list-item' data-name='Notice for Expert Session on Security Careers in the Real World'>
+                <div><a href='https://erp.psit.ac.in/assets/Notice/1e0d9f05c04f9d78606b257124a0d509.pdf' style='text-decoration: none;'><span class='w-40 avatar gd-primary'>25</span></a></div>
+                <div class='flex'>
+                    <a href='https://erp.psit.ac.in/assets/Notice/1e0d9f05c04f9d78606b257124a0d509.pdf' class='item-author text-color'>Notice for Expert Session on Security Careers in the Real World</a>
+                    <div class='item-except text-muted text-sm h-1x'> 05/09/25 15:24 pm</div>
+                </div>
+                <div class='no-wrap'>
+                    <div class='item-date badge gd-primary' ></div>
+                </div> 
+            </div>
+            <div  style="cursor: pointer;" onclick="window.location.href = 'https://erp.psit.ac.in/assets/Notice/e8a094529865fe9dc45d168622122ebc.pdf'"
+class='list-item' data-name='Important Notice- Pertaining to ABC ID for all the second Year Students, session 2025-26'>
+                <div><a href='https://erp.psit.ac.in/assets/Notice/e8a094529865fe9dc45d168622122ebc.pdf' style='text-decoration: none;'><span class='w-40 avatar gd-primary'>26</span></a></div>
+                <div class='flex'>
+                    <a href='https://erp.psit.ac.in/assets/Notice/e8a094529865fe9dc45d168622122ebc.pdf' class='item-author text-color'>Important Notice- Pertaining to ABC ID for all the second Year Students, session 2025-26</a>
+                    <div class='item-except text-muted text-sm h-1x'> 01/09/25 11:41 am</div>
+                </div>
+                <div class='no-wrap'>
+                    <div class='item-date badge gd-primary' ></div>
+                </div> 
+            </div>
+            <div  style="cursor: pointer;" onclick="window.location.href = 'https://erp.psit.ac.in/assets/Notice/4cf08834617a5a040ddb393a0cc14668.PDF'"
+class='list-item' data-name='Constitution of Anti Ragging Vigilance Committee (Session 2025-26)'>
+                <div><a href='https://erp.psit.ac.in/assets/Notice/4cf08834617a5a040ddb393a0cc14668.PDF' style='text-decoration: none;'><span class='w-40 avatar gd-primary'>27</span></a></div>
+                <div class='flex'>
+                    <a href='https://erp.psit.ac.in/assets/Notice/4cf08834617a5a040ddb393a0cc14668.PDF' class='item-author text-color'>Constitution of Anti Ragging Vigilance Committee (Session 2025-26)</a>
+                    <div class='item-except text-muted text-sm h-1x'> 28/07/25 14:07 pm</div>
+                </div>
+                <div class='no-wrap'>
+                    <div class='item-date badge gd-primary' ></div>
+                </div> 
+            </div>
+            <div  style="cursor: pointer;" onclick="window.location.href = 'https://erp.psit.ac.in/assets/Notice/2f5734dfff0f83622715c327455fb4b5.PDF'"
+class='list-item' data-name='Constitution of Internal Complaint Committee (Session 2025-26)'>
+                <div><a href='https://erp.psit.ac.in/assets/Notice/2f5734dfff0f83622715c327455fb4b5.PDF' style='text-decoration: none;'><span class='w-40 avatar gd-primary'>28</span></a></div>
+                <div class='flex'>
+                    <a href='https://erp.psit.ac.in/assets/Notice/2f5734dfff0f83622715c327455fb4b5.PDF' class='item-author text-color'>Constitution of Internal Complaint Committee (Session 2025-26)</a>
+                    <div class='item-except text-muted text-sm h-1x'> 28/07/25 14:06 pm</div>
+                </div>
+                <div class='no-wrap'>
+                    <div class='item-date badge gd-primary' ></div>
+                </div> 
+            </div>
+            <div  style="cursor: pointer;" onclick="window.location.href = 'https://erp.psit.ac.in/assets/Notice/adf8a2612331cf40da45bd9c43111c0e.PDF'"
+class='list-item' data-name='Constitution of Student&amp;#39;s Grievance Cell (Session 2025-26)'>
+                <div><a href='https://erp.psit.ac.in/assets/Notice/adf8a2612331cf40da45bd9c43111c0e.PDF' style='text-decoration: none;'><span class='w-40 avatar gd-primary'>29</span></a></div>
+                <div class='flex'>
+                    <a href='https://erp.psit.ac.in/assets/Notice/adf8a2612331cf40da45bd9c43111c0e.PDF' class='item-author text-color'>Constitution of Student&#39;s Grievance Cell (Session 2025-26)</a>
+                    <div class='item-except text-muted text-sm h-1x'> 28/07/25 14:06 pm</div>
+                </div>
+                <div class='no-wrap'>
+                    <div class='item-date badge gd-primary' ></div>
+                </div> 
+            </div>
+            <div  style="cursor: pointer;" onclick="window.location.href = 'https://erp.psit.ac.in/assets/Notice/40aed10c4aa6edb7c892dc112de3d051.pdf'"
+class='list-item' data-name='Establishment of Equal Opportunity Cell-2024-25'>
+                <div><a href='https://erp.psit.ac.in/assets/Notice/40aed10c4aa6edb7c892dc112de3d051.pdf' style='text-decoration: none;'><span class='w-40 avatar gd-primary'>30</span></a></div>
+                <div class='flex'>
+                    <a href='https://erp.psit.ac.in/assets/Notice/40aed10c4aa6edb7c892dc112de3d051.pdf' class='item-author text-color'>Establishment of Equal Opportunity Cell-2024-25</a>
+                    <div class='item-except text-muted text-sm h-1x'> 08/02/25 14:48 pm</div>
+                </div>
+                <div class='no-wrap'>
+                    <div class='item-date badge gd-primary' ></div>
+                </div> 
+            </div>
+
+
+        <div>
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+    </div>
+</div>
+
+
+<script>
+    document.getElementById('searchNotices').addEventListener('input', function() {
+        const searchQuery = this.value.toLowerCase();
+        const noticeItems = document.querySelectorAll('#noticesList .list-item');
+
+        noticeItems.forEach(item => {
+            const name = item.getAttribute('data-name').toLowerCase();
+            if (name.includes(searchQuery)) {
+                item.style.display = 'flex';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    });
+</script>
+
+
+
+<style>
+    .searchNotices .flex {
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto
+    }
+
+    .searchNotices .card {
+        background: #fff;
+        border-width: 0;
+        border-radius: .25rem;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, .05);
+        margin-bottom: 1.5rem;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        word-wrap: break-word;
+        background-color: #fff;
+        background-clip: border-box;
+        border-top: 1px solid rgba(19, 24, 44, .125);
+        border-radius: .25rem
+    }
+
+    .searchNotices .list-item {
+        position: relative;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        min-width: 0;
+        word-wrap: break-word;
+    }
+
+    .searchNotices .list-item.block .media {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0
+    }
+
+    .searchNotices .list-item.block .list-content {
+        padding: 1rem
+    }
+
+    .searchNotices .w-40 {
+        width: 40px !important;
+        height: 40px !important
+    }
+
+    .searchNotices .avatar {
+        text-decoration: none;
+        position: relative;
+        line-height: 1;
+        border-radius: 500px;
+        white-space: nowrap;
+        font-weight: 700;
+        border-radius: 100%;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -ms-flex-negative: 0;
+        flex-shrink: 0;
+        border-radius: 500px;
+        box-shadow: 0 5px 10px 0 rgba(50, 50, 50, .15)
+    }
+
+    .searchNotices .avatar img {
+        border-radius: inherit;
+        width: 100%
+    }
+
+    .searchNotices .gd-primary {
+        color: #fff;
+        border: none;
+        background: #3994FF linear-gradient(45deg, #00BCD4, #3994FF)
+    }
+
+    /* .flex {
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto
+    } */
+
+    .searchNotices .item-author {
+        text-decoration: none;
+        font-weight: 500;
+        text-transform: capitalize;
+    }
+
+    .searchNotices .text-color {
+        color: #2d3135;
+
+    }
+
+    .searchNotices .text-sm {
+        font-size: .825rem
+    }
+
+    .searchNotices .h-1x {
+        height: 1.25rem;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical
+    }
+
+    .searchNotices .no-wrap {
+        white-space: nowrap
+    }
+
+    .searchNotices .list-row .list-item {
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -ms-flex-align: center;
+        align-items: center;
+        padding: .75rem .625rem
+    }
+
+    .searchNotices .list-item {
+        position: relative;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        min-width: 0;
+        word-wrap: break-word
+    }
+
+    .searchNotices .list-row .list-item>* {
+        padding-left: .625rem;
+        padding-right: .625rem
+    }
+
+    .searchNotices .dropdown {
+        position: relative
+    }
+
+    .searchNotices .inputs {
+
+        position: relative;
+
+    }
+
+    .searchNotices .form-control {
+        text-indent: 15px;
+        border: none;
+        height: 45px;
+        border-radius: 0px;
+        /*border-bottom: 1px solid #eee;*/
+        padding-left: 24px;
+    }
+
+    .searchNotices .form-control:focus {
+        color: #495057;
+        background-color: #fff;
+        border-color: #eee;
+        outline: 0;
+        box-shadow: none;
+        border-bottom: 1px solid blue;
+    }
+
+
+    .searchNotices .form-control:focus {
+        color: blue;
+    }
+
+    .searchNotices .inputs i {
+
+        position: absolute;
+        top: 16px;
+        left: 14px;
+        color: #b8b9bc;
+    }
+
+    .searchNotices .noticeTab .nav-item .nav-link {
+        /*padding: 5px 8px;*/
+    }
+
+    .searchNotices .noticeTab .nav-item .active {
+        border-bottom: 2px solid #3994FF !important;
+    }
+
+    .searchNotices .noticeTab .nav-link {
+        color: rgb(110, 110, 110);
+        font-weight: 500;
+        padding: 12px 18px;
+    }
+
+    .searchNotices .noticeTab .nav-link:hover {
+        color: #3994FF;
+    }
+
+    .searchNotices .noticeTab .nav-link.active {
+        color: #3994FF;
+        background-color: white;
+        border-radius: 0.5rem 0.5rem 0 0;
+        font-weight: 600;
+    }
+
+
+    @media (max-width : 991.98px) {
+        .searchNotices .padding {
+            padding: 1.5rem
+        }
+    }
+
+    @media (max-width : 767.98px) {
+        .searchNotices .padding {
+            padding: 1rem
+        }
+    }
+
+
+
+
+    @media (max-width: 767.98px) {
+
+        .login.login-with-news-feed .news-feed,
+        .register.register-with-news-feed .news-feed {
+            display: block;
+            position: unset;
+        }
+
+        .login.login-with-news-feed,
+        .register.register-with-news-feed {
+            display: flex;
+            flex-direction: column-reverse;
+        }
+
+        @media (max-width: 767.98px) {
+            .login.login-with-news-feed .login-container {
+                width: auto;
+                margin-left: unset;
+            }
+        }
+    }
+</style>                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="nav-tab-3">
+                                    <div class="p-3">
+
+    <!-- begin page-header -->
+    <!-- <h5 class="page-header" style="color: black; ">Important Phone No. & Helpline</h5> -->
+    <h5 class="  text-center text-black p-3 m-0 mb-3" style="background: lightgray; ">Important Phone No. & Helpline</h5>
+    <!-- end page-header -->
+    <!-- Administration  -->
+
+    <!-- starts administration row ------------------------------------------------------------------------------------------------------------------------------------------------>
+    <div>
+        <!-- begin col-12 -->
+        <div>
+            <!-- begin panel -->
+            <div class="panel" data-sortable-id="ui-widget-helpline-1">
+                <!-- <div class="panel-heading text-white ui-sortable-handle theme-color-class"  style="  background: gray; " > -->
+                <div class="panel-heading text-white ui-sortable-handle theme-color-class" style="  background: gray; ">
+                    <h4 class="panel-title theme-text-color">Administration</h4>
+                    <div class="panel-heading-btn">
+                        <a href="javascript:;" class="btn btn-xs btn-icon btn-default" data-toggle="panel-expand"><i class="fa fa-expand"></i></a>
+                        <a href="javascript:;" class="btn btn-xs btn-icon btn-success" data-toggle="panel-reload"><i class="fa fa-redo"></i></a>
+                        <a href="javascript:;" class="btn btn-xs btn-icon btn-warning" data-toggle="panel-collapse"><i class="fa fa-minus"></i></a>
+                        <a href="javascript:;" class="btn btn-xs btn-icon btn-danger" data-toggle="panel-remove"><i class="fa fa-times"></i></a>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th style="color: black;">Sr. No</th>
+                                    <th style="color: black;">Name</th>
+                                    <th style="color: black;">Designation/Department</th>
+                                    <th style="color: black;">Mobile No.</th>
+                                    <th style="color: black;">Ext. No.</th>
+                                    <th style="color: black;">Email</th>
+
+                                </tr>
+                            </thead>
+                            <tbody class="text-muted">
+                                
+                                <tr>
+                                    <td>1</td>
+                                    <td>Dr. Sandeep Kumar Shukla</td>
+                                    <td>Registrar, PSIT</td>
+                                    <td>9415134592</td>
+                                    <td>659</td>
+                                    <td> registrar@psit.ac.in</td>
+
+                                </tr>
+
+                                <tr>
+                                    <td>2</td>
+                                    <td>Mr. R. Vikram Singh</td>
+                                    <td>Dy. Registrar, PSIT</td>
+                                    <td>9453588396</td>
+                                    <td>672</td>
+                                    <td>office@psit.ac.in</td>
+
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Mr. Devesh Kumar Shukla</td>
+                                    <td>Finance Officer</td>
+                                    <td>8005465111</td>
+                                    <td>606</td>
+                                    <td>devesh.shukla@psit.in
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Mr. Mahendra Kumar Gupta</td>
+                                    <td>Admin Officer, PSIT</td>
+                                    <td>8004233999</td>
+                                    <td>664</td>
+                                    <td>psit@psit.ac.in</td>
+
+                                </tr>
+                                                                <tr>
+                                    <td>5</td>
+                                    <td>Mrs. Bint-E Rasool</td>
+                                    <td>Admin Officer PSITCHE</td>
+                                    <td>8005465222</td>
+                                    <td>806</td>
+                                    <td>binte@psit.in</td>
+
+                                </tr>
+
+
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- end panel -->
+        </div>
+    </div>
+    <!-- ends administration content -->
+
+    <!-- technical support & services -->
+    <div>
+        <!-- begin col-12 -->
+        <div>
+            <!-- begin panel -->
+            <div class="panel" data-sortable-id="ui-widget-helpline-2">
+                <div class="panel-heading text-white ui-sortable-handle theme-color-class" style="  background: gray; ">
+                    <h4 class="panel-title theme-text-color">Technical Support & Services</h4>
+                    <div class="panel-heading-btn">
+                        <a href="javascript:;" class="btn btn-xs btn-icon btn-default" data-toggle="panel-expand"><i class="fa fa-expand"></i></a>
+                        <a href="javascript:;" class="btn btn-xs btn-icon btn-success" data-toggle="panel-reload"><i class="fa fa-redo"></i></a>
+                        <a href="javascript:;" class="btn btn-xs btn-icon btn-warning" data-toggle="panel-collapse"><i class="fa fa-minus"></i></a>
+                        <a href="javascript:;" class="btn btn-xs btn-icon btn-danger" data-toggle="panel-remove"><i class="fa fa-times"></i></a>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th style="color: black;">Sr. No</th>
+                                    <th style="color: black;">Name</th>
+                                    <th style="color: black;">Designation/Department</th>
+                                    <th style="color: black;">Mobile No.</th>
+                                    <th style="color: black;">Ext. No.</th>
+                                    <th style="color: black;">Email</th>
+
+                                </tr>
+                            </thead>
+                            <tbody class="text-muted">
+
+                                <tr>
+                                    <td>1</td>
+                                    <td>Dr. Amit Kr. Srivastava</td>
+                                    <td>IT Head - Network Cell</td>
+                                    <td>7408159999</td>
+                                    <td>317</td>
+                                    <td>amit@psit.in
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Mr. Dharmendra Kumar Singh</td>
+                                    <td>Network Administrator</td>
+                                    <td>8004516152</td>
+                                    <td>109</td>
+                                    <td>networkcell@psit.in
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Mr. Virendra Singh</td>
+                                    <td>Sr. Software Engineer</td>
+                                    <td>8175819229</td>
+                                    <td>320</td>
+                                    <td>virendra@psit.in
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- end panel -->
+        </div>
+    </div>
+    <!-- ends technical supoort content -->
+
+    <!-- Department of placements row -->
+    <div>
+        <!-- begin col-12 -->
+        <div>
+            <!-- begin panel -->
+            <div class="panel" data-sortable-id="ui-widget-helpline-3">
+                <div class="panel-heading text-white ui-sortable-handle theme-color-class" style="  background: gray; ">
+                    <h4 class="panel-title theme-text-color">Department of Placements</h4>
+                    <div class="panel-heading-btn">
+                        <a href="javascript:;" class="btn btn-xs btn-icon btn-default" data-toggle="panel-expand"><i class="fa fa-expand"></i></a>
+                        <a href="javascript:;" class="btn btn-xs btn-icon btn-success" data-toggle="panel-reload"><i class="fa fa-redo"></i></a>
+                        <a href="javascript:;" class="btn btn-xs btn-icon btn-warning" data-toggle="panel-collapse"><i class="fa fa-minus"></i></a>
+                        <a href="javascript:;" class="btn btn-xs btn-icon btn-danger" data-toggle="panel-remove"><i class="fa fa-times"></i></a>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th style="color: black;">Sr. No</th>
+                                    <th style="color: black;">Name</th>
+                                    <th style="color: black;">Designation/Department</th>
+                                    <th style="color: black;">Mobile No.</th>
+                                    <th style="color: black;">Ext. No.</th>
+                                    <th style="color: black;">Email</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-muted">
+
+                                <tr>
+                                    <td>1</td>
+                                    <td>Mrs.Shradha Gaur</td>
+                                    <td>Chief Manager - Placement Department</td>
+                                    <td>+91-9369325425</td>
+                                    <td>692</td>
+                                    <td>placement@psit.in</td>
+
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Mrs.Avleen Kaur</td>
+                                    <td>Deputy Chief Manager - Placement Department</td>
+                                    <td>+91-9999681297</td>
+                                    <td></td>
+                                    <td>placement@psit.in</td>
+
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Mr.Nikhil Agarwal</td>
+                                    <td>Sr. Manager - Placement Department</td>
+                                    <td> +91-7499101176</td>
+                                    <td>693</td>
+                                    <td>placement@psit.in</td>
+
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Mr.Brij Bihari Awasthi</td>
+                                    <td>Manager - Placement Department</td>
+                                    <td>+91-7499141681</td>
+                                    <td>694</td>
+                                    <td>placement@psit.ac.in</td>
+
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Mr.Som Chaturvedi</td>
+                                    <td>Manager - Placement Department</td>
+                                    <td>+91-8004232555</td>
+                                    <td>691</td>
+                                    <td>tnp@psit.in</td>
+
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>Ms.Anushka Singh</td>
+                                    <td>Asst Manager - Placement Department</td>
+                                    <td>+91-9389191820</td>
+                                    <td>691</td>
+                                    <td>tnp@psit.in</td>
+
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>Ms.Nooreen Athar</td>
+                                    <td>Deputy Chief Manager - Placement Department</td>
+                                    <td>+91-9219246873</td>
+                                    <td>691</td>
+                                    <td>placement@psit.in</td>
+
+                                </tr>
+                                <tr>
+                                    <td>8</td>
+                                    <td>Mr. Jagadish K Tiwari</td>
+                                    <td>Deputy Chief Manager - Placement Department</td>
+                                    <td>+91-8884444923</td>
+                                    <td>691</td>
+                                    <td>placement@psit.in</td>
+
+                                </tr>
+                                <tr>
+                                    <td>9</td>
+                                    <td>Ms. Lokisha Navaneethakrishnan</td>
+                                    <td>Deputy Chief Manager - Placement Department</td>
+                                    <td>+91-9597898387</td>
+                                    <td>691</td>
+                                    <td>placement@psit.in</td>
+
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- end panel -->
+        </div>
+    </div>
+    <!-- ends department of placements row -->
+
+    <!-- Maintenance row -->
+    <div>
+        <!-- begin col-12 -->
+        <div>
+            <!-- begin panel -->
+            <div class="panel" data-sortable-id="ui-widget-helpline-4">
+                <div class="panel-heading text-white ui-sortable-handle theme-color-class" style="  background: gray; ">
+                    <h4 class="panel-title theme-text-color">Maintenance</h4>
+                    <div class="panel-heading-btn">
+                        <a href="javascript:;" class="btn btn-xs btn-icon btn-default" data-toggle="panel-expand"><i class="fa fa-expand"></i></a>
+                        <a href="javascript:;" class="btn btn-xs btn-icon btn-success" data-toggle="panel-reload"><i class="fa fa-redo"></i></a>
+                        <a href="javascript:;" class="btn btn-xs btn-icon btn-warning" data-toggle="panel-collapse"><i class="fa fa-minus"></i></a>
+                        <a href="javascript:;" class="btn btn-xs btn-icon btn-danger" data-toggle="panel-remove"><i class="fa fa-times"></i></a>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th style="color: black;">Sr. No</th>
+                                    <th style="color: black;">Name</th>
+                                    <th style="color: black;">Designation/Department</th>
+                                    <th style="color: black;">Mobile No.</th>
+                                    <th style="color: black;">Ext. No.</th>
+                                    <th style="color: black;">Email</th>
+
+                                </tr>
+                            </thead>
+                            <tbody class="text-muted">
+                                <!--<tr>
+                                                            <td>1</td>
+                                                            <td>Mr. L.P. Verma</td>
+                                                            <td>Sr. Manager Maintenance</td>
+                                                            <td>9415406377</td>
+                                                            <td>-</td>
+                                                            <td>maintenance@psit.in
+                                                            </td>
+
+                                                        </tr>-->
+                                <tr>
+                                    <td>1</td>
+                                    <td>Mr. Balwan Singh</td>
+                                    <td>Sr. manager (Electrical)</td>
+                                    <td>8005001555</td>
+                                    <td>175</td>
+                                    <td>electrical@psit.in
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Mr. Bhanu Pratap Singh</td>
+                                    <td>Civil Construction</td>
+                                    <td>9415726120</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Mr. Abhishek Singh</td>
+                                    <td>Manager Maintenance( PSIT & PSIT CHE)</td>
+                                    <td>9236160705</td>
+                                    <td>172</td>
+                                    <td>je@psit.in
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Mr. Hemant Kumar</td>
+                                    <td>Supervisor Maintenance</td>
+                                    <td>8434233308</td>
+                                    <td>102</td>
+                                    <td>hemant.kumar@psit.ac.in
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- end panel -->
+        </div>
+    </div>
+    <!-- ends Maintenance row -->
+
+    <!-- starts Hostel row -->
+    <div>
+        <!-- begin col-12 -->
+        <div>
+            <!-- begin panel -->
+            <div class="panel" data-sortable-id="ui-widget-helpline-5">
+                <div class="panel-heading text-white ui-sortable-handle theme-color-class" style="  background: gray; ">
+                    <h4 class="panel-title theme-text-color">Hostel</h4>
+                    <div class="panel-heading-btn">
+                        <a href="javascript:;" class="btn btn-xs btn-icon btn-default" data-toggle="panel-expand"><i class="fa fa-expand"></i></a>
+                        <a href="javascript:;" class="btn btn-xs btn-icon btn-success" data-toggle="panel-reload"><i class="fa fa-redo"></i></a>
+                        <a href="javascript:;" class="btn btn-xs btn-icon btn-warning" data-toggle="panel-collapse"><i class="fa fa-minus"></i></a>
+                        <a href="javascript:;" class="btn btn-xs btn-icon btn-danger" data-toggle="panel-remove"><i class="fa fa-times"></i></a>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th width="43" style="color: black;">Sr. No</th>
+                                    <th width="150" style="color: black;">Name</th>
+                                    <th width="169" style="color: black;">Designation/Department</th>
+                                    <th width="80" style="color: black;">Mobile No.</th>
+                                    <th width="55" style="color: black;">Ext. No.</th>
+                                    <th width="95" style="color: black;">Email</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-muted">
+                                                                <tr>
+                                    <td>1</td>
+                                    <td>Ms. Sushma Singh</td>
+                                    <td>Warden (Girls' Hostel A & B)</td>
+                                    <td>8004211777</td>
+                                    <td>300</td>
+                                    <td>gha@psit.ac.in
+                                    </td>
+
+                                </tr>
+                                <!--<tr>
+																	<td>2</td>
+																	<td>Mrs. Rupali Srivastava</td>
+																<td>Warden (Girls' Hostel C)</td>
+																	<td>8004355777</td>
+																	<td>243</td>
+																	<td>ghc@psit.ac.in</td>
+
+																</tr>
+																<tr>
+																	<td>3</td>
+																	<td>Ms. Manisha Srivastava</td>
+																<td>Warden (Girls' Hostel D)</td>
+																	<td>9415042578</td>
+																	<td>825</td>
+																	<td>ghd@psit.ac.in</td>
+
+																</tr>-->
+                                <tr>
+                                    <td>2</td>
+                                    <td>Mr. Nishant Gupta</td>
+                                    <td>Warden (Boys' Hostel A)</td>
+                                    <td>9198468690</td>
+                                    <td>200</td>
+                                    <td>bha@psit.ac.in
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Mr. Nursingh Charan Sahoo</td>
+                                    <td>Warden (Boys' Hostel B)</td>
+                                    <td>8005001777</td>
+                                    <td>815</td>
+                                    <td>bhb@psit.ac.in
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Mr. Anoop Anand Jas</td>
+                                    <td>Warden (Boys' Hostel C)</td>
+                                    <td>9454143048</td>
+                                    <td>310</td>
+                                    <td>bhc@psit.ac.in
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+                                    <td>5</td>
+                                    <td>Mr. Brijesh Mishra</td>
+                                    <td>Warden (Boys' Hostel D )
+                                    </td>
+                                    <td>8005066777</td>
+                                    <td>118</td>
+                                    <td>bhd@psit.ac.in
+                                    </td>
+
+                                </tr>
+                                                                <!--<tr >
+																	<td >7</td >
+																	<td >Mr. Piyadad Fernandes</td >
+																	<td >Warden (Senior Boys' Hostel E )</td >
+																	<td >8005001666</td >
+																	<td >803</td >
+																	<td >p.fernandes@psit.in
+																	</td >
+
+																</tr >-->
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- end panel -->
+        </div>
+    </div>
+    <!-- ends Hostel row -->
+
+    <!-- starts Front Office row -->
+    <div>
+        <!-- begin col-12 -->
+        <div>
+            <!-- begin panel -->
+            <div class="panel" data-sortable-id="ui-widget-helpline-6">
+                <div class="panel-heading text-white ui-sortable-handle theme-color-class" style="  background: gray; ">
+                    <h4 class="panel-title theme-text-color">Front Office</h4>
+                    <div class="panel-heading-btn">
+                        <a href="javascript:;" class="btn btn-xs btn-icon btn-default" data-toggle="panel-expand"><i class="fa fa-expand"></i></a>
+                        <a href="javascript:;" class="btn btn-xs btn-icon btn-success" data-toggle="panel-reload"><i class="fa fa-redo"></i></a>
+                        <a href="javascript:;" class="btn btn-xs btn-icon btn-warning" data-toggle="panel-collapse"><i class="fa fa-minus"></i></a>
+                        <a href="javascript:;" class="btn btn-xs btn-icon btn-danger" data-toggle="panel-remove"><i class="fa fa-times"></i></a>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th style="color: black;">Sr. No</th>
+                                    <th style="color: black;">Name</th>
+                                    <th style="color: black;">Designation/Department</th>
+                                    <th style="color: black;">Mobile No.</th>
+                                    <th style="color: black;">Ext. No.</th>
+                                    <th style="color: black;">Email</th>
+
+                                </tr>
+                            </thead>
+                            <tbody class="text-muted">
+                                <!--
+                                                        <tr>
+                                                            <td>1</td>
+                                                            <td>Ms. Bhawna Moorjani</td>
+                                                            <td>Executive - Public Relation</td>
+                                                            <td>8005465333</td>
+                                                            <td>9/100/222/333</td>
+                                                            <td>reception@psit.in
+                                                            </td>
+
+                                                        </tr>-->
+                                <tr>
+                                    <td>1</td>
+                                    <td>Front Office</td>
+                                    <td>Reception</td>
+                                    <td></td>
+                                    <td>600</td>
+                                    <td>reception@psit.in
+                                    </td>
+
+                                </tr>
+
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+            <!-- end panel -->
+        </div>
+    </div>
+    <!-- ends Front Office row -->
+
+    <!-- starts Medical row -->
+    <div>
+        <!-- begin col-12 -->
+        <div>
+            <!-- begin panel -->
+            <div class="panel" data-sortable-id="ui-widget-helpline-7">
+                <div class="panel-heading text-white ui-sortable-handle theme-color-class" style="  background: gray; ">
+                    <h4 class="panel-title theme-text-color">Medical</h4>
+                    <div class="panel-heading-btn">
+                        <a href="javascript:;" class="btn btn-xs btn-icon btn-default" data-toggle="panel-expand"><i class="fa fa-expand"></i></a>
+                        <a href="javascript:;" class="btn btn-xs btn-icon btn-success" data-toggle="panel-reload"><i class="fa fa-redo"></i></a>
+                        <a href="javascript:;" class="btn btn-xs btn-icon btn-warning" data-toggle="panel-collapse"><i class="fa fa-minus"></i></a>
+                        <a href="javascript:;" class="btn btn-xs btn-icon btn-danger" data-toggle="panel-remove"><i class="fa fa-times"></i></a>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th style="color: black;">Sr. No</th>
+                                    <th style="color: black;">Name</th>
+                                    <th style="color: black;">Designation/Department</th>
+                                    <th style="color: black;">Mobile No.</th>
+                                    <th style="color: black;">Ext. No.</th>
+                                    <th style="color: black;">Email</th>
+
+                                </tr>
+                            </thead>
+                            <tbody class="text-muted">
+                                <tr>
+                                    <td>1</td>
+                                    <td>Dr Kamal Kr. Trivedi</td>
+                                    <td>Medical Officer(MBBS)</td>
+                                    <td>9839012659</td>
+                                    <td>256</td>
+                                    <td>medical@psit.in</td>
+
+                                </tr>
+                                <!--<tr>
+                                                        <td>2</td>
+                                                        <td>Dr Rajeev Pandurang Dahiwal</td>
+                                                        <td>Medical Officer(MBBS)</td>
+                                                        <td>8005465111</td>
+                                                        <td>256</td>
+                                                        <td>medical@psit.in</td>
+
+                                                    </tr>-->
+                                <tr>
+                                    <td>2</td>
+                                    <td>Mr. R.K. Tripathi</td>
+                                    <td>Compounder</td>
+                                    <td>9005307275</td>
+                                    <td>256</td>
+                                    <td>medical@psit.in</td>
+
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Ambulance</td>
+                                    <td>Driver</td>
+                                    <td>0</td>
+                                    <td>256</td>
+                                    <td>medical@psit.in</td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- end panel -->
+        </div>
+    </div>
+    <!-- ends Medical row -->
+
+    <!-- starts security row -->
+    <div>
+        <!-- begin col-12 -->
+        <div>
+            <!-- begin panel -->
+            <div class="panel" data-sortable-id="ui-widget-helpline-8">
+                <div class="panel-heading text-white ui-sortable-handle theme-color-class" style="  background: gray; ">
+                    <h4 class="panel-title theme-text-color">Security</h4>
+                    <div class="panel-heading-btn">
+                        <a href="javascript:;" class="btn btn-xs btn-icon btn-default" data-toggle="panel-expand"><i class="fa fa-expand"></i></a>
+                        <a href="javascript:;" class="btn btn-xs btn-icon btn-success" data-toggle="panel-reload"><i class="fa fa-redo"></i></a>
+                        <a href="javascript:;" class="btn btn-xs btn-icon btn-warning" data-toggle="panel-collapse"><i class="fa fa-minus"></i></a>
+                        <a href="javascript:;" class="btn btn-xs btn-icon btn-danger" data-toggle="panel-remove"><i class="fa fa-times"></i></a>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th style="color: black;">Sr. No</th>
+                                    <th style="color: black;">Name</th>
+                                    <th style="color: black;">Designation/Department</th>
+                                    <th style="color: black;">Mobile No.</th>
+                                    <th style="color: black;">Ext. No.</th>
+                                    <th style="color: black;">Email</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-muted">
+                                <tr>
+                                    <td>1</td>
+                                    <td>Mr. Milap Singh Dhami</td>
+                                    <td>Security Officer</td>
+                                    <td>9452054235</td>
+                                    <td>111</td>
+                                    <td>security@psit.in</td>
+
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- end panel -->
+        </div>
+    </div>
+    <!-- ends security row -->
+
+    <!-- starts store row -->
+    <div>
+        <!-- begin col-12 -->
+        <div>
+            <!-- begin panel -->
+            <div class="panel" data-sortable-id="ui-widget-helpline-9">
+                <div class="panel-heading text-white ui-sortable-handle theme-color-class" style="  background: gray; ">
+                    <h4 class="panel-title theme-text-color">Store</h4>
+                    <div class="panel-heading-btn">
+                        <a href="javascript:;" class="btn btn-xs btn-icon btn-default" data-toggle="panel-expand"><i class="fa fa-expand"></i></a>
+                        <a href="javascript:;" class="btn btn-xs btn-icon btn-success" data-toggle="panel-reload"><i class="fa fa-redo"></i></a>
+                        <a href="javascript:;" class="btn btn-xs btn-icon btn-warning" data-toggle="panel-collapse"><i class="fa fa-minus"></i></a>
+                        <a href="javascript:;" class="btn btn-xs btn-icon btn-danger" data-toggle="panel-remove"><i class="fa fa-times"></i></a>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th style="color: black;">Sr. No</th>
+                                    <th style="color: black;">Name</th>
+                                    <th style="color: black;">Designation/Department</th>
+                                    <th style="color: black;">Mobile No.</th>
+                                    <th style="color: black;">Ext. No.</th>
+                                    <th style="color: black;">Email</th>
+
+                                </tr>
+                            </thead>
+                            <tbody class="text-muted">
+                                <tr>
+                                    <td>1</td>
+                                    <td>Mr. Pawan Kumar Mishra</td>
+                                    <td>Incharge Store (PSIT)</td>
+                                    <td>9455103012</td>
+                                    <td>621</td>
+                                    <td>store@psit.in</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+            <!-- end panel -->
+        </div>
+    </div>
+    <!-- ends store row -->
+
+    <!-- starts Transport / Bus row -->
+    <div>
+        <!-- begin col-12 -->
+        <div>
+            <!-- begin panel -->
+            <div class="panel" data-sortable-id="ui-widget-helpline-10">
+                <div class="panel-heading text-white ui-sortable-handle theme-color-class" style="  background: gray; ">
+                    <h4 class="panel-title theme-text-color">Transport / Bus</h4>
+                    <div class="panel-heading-btn">
+                        <a href="javascript:;" class="btn btn-xs btn-icon btn-default" data-toggle="panel-expand"><i class="fa fa-expand"></i></a>
+                        <a href="javascript:;" class="btn btn-xs btn-icon btn-success" data-toggle="panel-reload"><i class="fa fa-redo"></i></a>
+                        <a href="javascript:;" class="btn btn-xs btn-icon btn-warning" data-toggle="panel-collapse"><i class="fa fa-minus"></i></a>
+                        <a href="javascript:;" class="btn btn-xs btn-icon btn-danger" data-toggle="panel-remove"><i class="fa fa-times"></i></a>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th style="color: black;">Sr. No</th>
+                                    <th style="color: black;">Name</th>
+                                    <th style="color: black;">Designation/Department</th>
+                                    <th style="color: black;">Mobile No.</th>
+                                    <th style="color: black;">Ext. No.</th>
+                                    <th style="color: black;">Email</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-muted">
+                                <tr>
+                                    <td>1</td>
+                                    <td>Mr. Sumit Singh</td>
+                                    <td>Manager - Transport</td>
+                                    <td>8004402176</td>
+                                    <td>117</td>
+                                    <td>transport@psit.in</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Mr. Shrikant mishra</td>
+                                    <td>Executive - Transport</td>
+                                    <td>8005001666</td>
+                                    <td>117</td>
+                                    <td>transport@psit.in</td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- end panel -->
+        </div>
+    </div>
+    <!-- ends Transport / Bus row -->
+
+    <!-- starts Library row -->
+    <div>
+        <!-- begin col-12 -->
+        <div>
+            <!-- begin panel -->
+            <div class="panel" data-sortable-id="ui-widget-helpline-11">
+                <div class="panel-heading text-white ui-sortable-handle theme-color-class" style="  background: gray; ">
+                    <h4 class="panel-title theme-text-color">Library</h4>
+                    <div class="panel-heading-btn">
+                        <a href="javascript:;" class="btn btn-xs btn-icon btn-default" data-toggle="panel-expand"><i class="fa fa-expand"></i></a>
+                        <a href="javascript:;" class="btn btn-xs btn-icon btn-success" data-toggle="panel-reload"><i class="fa fa-redo"></i></a>
+                        <a href="javascript:;" class="btn btn-xs btn-icon btn-warning" data-toggle="panel-collapse"><i class="fa fa-minus"></i></a>
+                        <a href="javascript:;" class="btn btn-xs btn-icon btn-danger" data-toggle="panel-remove"><i class="fa fa-times"></i></a>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th style="color: black;">Sr. No</th>
+                                    <th style="color: black;">Name</th>
+                                    <th style="color: black;">Designation/Department</th>
+                                    <th style="color: black;">Mobile No.</th>
+                                    <th style="color: black;">Ext. No.</th>
+                                    <th style="color: black;">Email</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-muted">
+
+                                <tr>
+                                    <td>1</td>
+                                    <td>Dr. Rakesh Singh Tomar</td>
+                                    <td>Librarian- PSIT</td>
+                                    <td>9711060928</td>
+                                    <td>682</td>
+                                    <td>library@psit.in</td>
+
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Mr. Braj Kant Mishra</td>
+                                    <td>Asstt. Librarian- PSIT</td>
+                                    <td>8445596976</td>
+                                    <td>682</td>
+                                    <td>library@psit.in</td>
+
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Mr. Prashant Dixit</td>
+                                    <td>Asstt. Librarian- PSIT CHE</td>
+                                    <td>9455699383</td>
+                                    <td>648</td>
+                                    <td>library@psitche.ac.in</td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- end panel -->
+        </div>
+        <!-- end col-12 -->
+    </div>
+    <!-- ends Library row -->
+</div>                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="p-4">
+                        <div class="row position-static news-caption1 text-white p-2" style="border-radius: 8px; background-color: #00000087;">
+                            <div class="col-sm-6 mt-2 ">
+
+                                <h2 class="caption-title" style="font-size:22px; font-weight:900;"> Welcome to PSIT </h2>
+                                <p style="font-size:14px;" align="justify">
+                                    The access to this website is limited to the institute Management, Faculty and Students only (Login to your accounts to navigate the website). Visitors may kindly visit
+                                    <a href="https://psit.ac.in/" style="font-size:18px; font-weight:900;" target="_blank">www.psit.ac.in</a> for information about the institutes.
+                                </p>
+                            </div>
+                            <div class="col-sm-6 mt-2">
+                                <p style="font-size:14px;" align="justify"><strong style="font-size:18px; font-weight:900;">Vision :</strong> To achieve excellence in professional education and create an ecosystem for the holistic development of all stakeholders</p>
+                                <p style="font-size:14px;" align="justify"><strong style="font-size:18px; font-weight:900;">Mission :</strong> To provide an environment of effective learning and innovation transforming students into dynamic, responsible and productive professionals in their respective fields, who are capable of adapting to the changing needs of the industry and society.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 
+                        <div class="news-caption position-static" style="height:200px;">
+                            <h4 class="caption-title"><b>Welcome to</b> PSIT Kanpur</h4>
+                            <p style="font-size:14px; color:#DDDDDD;" align="justify"> The access to this website is limited to the institute Management, Faculty and Students only (Login to your accounts to navigate the website). Visitors may kindly visit <a href="https://psit.ac.in/" style="font-size:18px; color:#FFFFFF; font-weight:900;"
+                                    target="_blank">www.psit.ac.in</a> for information about the institutes.</p>
+                        </div> 
+                    -->
+
+
+
+
+                </div>
+            </div>
+            <div class="login-container" style="background-color: #F5F9FC;padding: 0px; justify-content: start;">
+                <div class="h-100 d-flex justify-content-center">
+
+    <div class="card" style=" border:0 ; margin:0">
+        <div class="gradient-border-button rounded-top text-white d-flex flex-row" style=" height:160px;   ">
+            <div class="ms-4 mt-1 d-flex flex-column" style="width: 130px;">
+                <img src="https://erp.psit.ac.in/assets/img/Simages/2411466.jpg"
+                    onerror="this.src='https://erp.psit.ac.in/assets/profileStudent.jpg'" class="img-fluid img-thumbnail mt-4 mb-2" style="width: 130px; z-index: 1">
+                <!-- <button style="z-index: 1;">Dashboard</button> -->
+                <!-- <a class="btn   border-2 border-gray btn-xs" href="https://erp.psit.ac.in/Student/Dashboard" style="z-index: 1;"> Dashboard </a> -->
+            </div>
+            <div class="ms-3" style="margin-top: 100px;">
+                <h4 class="mb-0">SIDDHARTHA SINGH</h4>
+                <small> 2401640101018</small>
+            </div>
+        </div>
+        <div class="px-4 py-3 text-black bg-body-tertiary">
+            <div class="d-flex justify-content-end text-center py-1 text-body">
+                <!-- <div> <p class="mb-1 h5">253</p> <p class="small text-muted mb-0">Photos</p> </div> <div class="px-3"> <p class="mb-1 h5">1026</p> <p class="small text-muted mb-0">Followers</p> </div> <div> <p class="mb-1 h5">478</p> <p class="small text-muted mb-0">Following</p> </div> -->
+                <!-- <div class="d-none d-sm-block"> <a href="#!" class="link-opacity-75-hover link-dark"> <img src="https://erp.psit.ac.in/assets/AppleApp.svg"> </a> </div> -->
+                <div>&nbsp;&nbsp;&nbsp;</div>
+                <div> <a target="_blank" href="https://www.psit.ac.in/" class="link-opacity-75-hover link-dark"> <img src="https://erp.psit.ac.in/assets/googleApp.svg"> </a> </div>
+            </div>
+        </div>
+        <div class="card-body px-4 text-black">
+            <div class="mb-3 text-dark "> <b class="badge  d-inline-flex align-items-center px-2 py-6px fs-14px" style="background-color:#00BCD4;"> <i class="fa fa-circle fa-fw fs-6px text-teal me-1"></i> <i class="fa fa-circle fa-fw fs-6px text-warning me-1"></i> <i class="fa fa-circle fa-fw fs-6px text-danger me-2"></i> Important Links </b> </div>
+            <!-- <div class="fw-bold fs-13px p-4 bg-body-tertiary" style="box-shadow: rgb(223 217 217 / 22%) 1px 4px 7px 0px; border-radius: 4px;"> <div class="d-flex align-items-center mb-3"> <i class="fa fa-table fa-lg fa-fw me-10px text-gray-600"></i> <div>My TimeTable</div> </div> <div class="d-flex align-items-center mb-3"> <i class="fa fa-user fa-lg fa-fw me-10px text-gray-600"></i> <div>Helpdesk</div> </div> <div class="d-flex align-items-center mb-3"> <i class="fa fa-swatchbook fa-lg fa-fw me-10px text-gray-600"></i> <div>Placement</div> </div> <div class="d-flex align-items-center mb-3"> <i class="fa fa-bookmark fa-lg fa-fw me-10px text-gray-600"></i> <div>Central Library</div> </div> <div class="d-flex align-items-center  "> <i class="fa fa-toggle-on fa-lg fa-fw me-10px text-gray-600"></i> <div>Logout</div> </div> </div> -->
+            <div class="row gy-3">
+                <div class="col-6 col-xl-4">
+                    <a href="https://erp.psit.ac.in/Student/Dashboard"
+                        class="d-flex flex-column align-items-center justify-content-center    bg-light rounded px-2 pt-4 pb-3 shadow-sm text-decoration-none">
+                        <i class="fa fa-home fa-lg fa-fw  mb-3 text-gray-600 text-primary " style=""></i> <span class="fs-7 text-body-secondary">My Account</span>
+                    </a>
+                </div>
+                <div class="col-6 col-xl-4">
+                    <a href="https://erp.psit.ac.in/Student/MyTimeTable"
+                        class="d-flex flex-column align-items-center justify-content-center bg-light  rounded px-2 pt-4 pb-3 shadow-sm text-decoration-none">
+                        <i class="fa fa-table fa-lg fa-fw  mb-3 text-gray-600"></i> <span class="fs-7 text-body-secondary">TimeTable</span> </a>
+                </div>
+                <div class="col-6 col-xl-4">
+                    <a href="https://erp.psit.ac.in/Student/MyAttendanceDetail"
+                        class="d-flex flex-column align-items-center justify-content-center bg-light rounded  px-2 pt-4 pb-3  shadow-sm text-decoration-none">
+                        <i class="fa fa-swatchbook fa-lg fa-fw  mb-3 text-gray-600"></i> <span class="fs-7 text-body-secondary"> My Attendance </span>
+                    </a>
+                </div>
+
+                <div class="col-6 col-xl-4">
+                    <a target="_blank" href="https://www.psit.ac.in/placements"
+                        class="d-flex flex-column align-items-center justify-content-center bg-light rounded px-2 pt-4 pb-3 shadow-sm text-decoration-none">
+                        <i class="fa fa-user fa-lg fa-fw  mb-3 text-gray-600"></i> <span class="fs-7 text-body-secondary">Placement</span>
+                    </a>
+                </div>
+                <div class="col-6 col-xl-4">
+                    <a href="https://erp.psit.ac.in/Student/Library"
+                        class="d-flex flex-column align-items-center justify-content-center bg-light rounded  px-2 pt-4 pb-3  shadow-sm text-decoration-none"> <i class="fa fa-bookmark fa-lg fa-fw  mb-3 text-gray-600"></i> <span class="fs-7 text-body-secondary">My Library</span> </a>
+                </div>
+                <div class="col-6 col-xl-4">
+                    <a href="https://erp.psit.ac.in/Student/Logout"
+                        class="d-flex flex-column align-items-center justify-content-center bg-body-secondary rounded  px-2 pt-4 pb-3  shadow-sm text-decoration-none"> <i class="fa fa-toggle-on fa-lg fa-fw  mb-3 text-gray-600"></i> <span class="fs-7 text-body-secondary">Logout</span> </a>
+                </div>
+            </div>
+        </div>
+        <div class="  px-4 text-black">
+            <!-- <div class="mb-5  text-body"> <p class="lead fw-bold mb-1 ">Important Links</p> <div class="p-4 bg-body-tertiary"> <p class="font-italic mb-1">Web Developer</p> <p class="font-italic mb-1">Lives in New York</p> <p class="font-italic mb-0">Photographer</p> </div> </div> <div class="d-flex justify-content-between align-items-center mb-4 text-body"> <p class="lead fw-normal mb-0">Recent photos</p> <p class="mb-0"><a href="#!" class="text-muted">Show all</a></p> </div> -->
+            <div class="mb-3 text-dark "> <b class="badge   d-inline-flex align-items-center px-2 py-6px fs-14px" style="background-color:#00BCD4;"> <i class="fa fa-circle fa-fw fs-6px text-teal me-1"></i> <i class="fa fa-circle fa-fw fs-6px text-warning me-1"></i> <i class="fa fa-circle fa-fw fs-6px text-danger me-2"></i> Activity Wall </b> </div>
+                        <script>
+                (function(d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0];
+                    if (d.getElementById(id)) return;
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+                    fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
+            </script>
+        </div>
+    </div>
+
+</div>
+
+
+
+<style>
+    .gradient-border-button {
+        position: relative;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        transform: translateX(0px);
+        /* box-shadow: 0 5px 15px rgba(96, 165, 250, 0.4); */
+    }
+
+    .gradient-border-button::before {
+        content: '';
+        position: absolute;
+        inset: 0px;
+        background: linear-gradient(45deg, #00BCD4, #a78bfa, #60a5fa);
+        z-index: -1;
+        transition: opacity 0.3s ease;
+        animation: borderRotate 4s linear infinite;
+    }
+
+    @keyframes borderRotate {
+        0% {
+            filter: hue-rotate(0deg);
+        }
+
+        100% {
+            filter: hue-rotate(360deg);
+        }
+    }
+</style>
+
+<style>
+    .gradient-custom-2 {
+        /* fallback for old browsers */
+        background: #fbc2eb;
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: -webkit-linear-gradient(to right, rgba(251, 194, 235, 1), rgba(166, 193, 238, 1));
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        background: linear-gradient(to right, rgba(251, 194, 235, 1), rgba(166, 193, 238, 1))
+    }
+</style>
+<style>
+    .time {
+        font-size: 9px !important
+    }
+
+    .socials i {
+        margin-right: 14px;
+        font-size: 17px;
+        color: #d2c8c8;
+        cursor: pointer
+    }
+
+    .feed-image img {
+        width: 100%;
+        height: auto
+    }
+
+    .feed .Sammvad img {
+        width: 100% !important;
+    }
+
+    .feed .Sammvad p {
+        margin-bottom: 0rem !important;
+    }
+</style>
+<!-- <div class="row g-2"> <div class="col mb-2"> <img src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(112).webp" alt="image 1" class="w-100 rounded-3"> </div> <div class="col mb-2"> <img src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(107).webp" alt="image 1" class="w-100 rounded-3"> </div> </div> <div class="row g-2"> <div class="col"> <img src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(108).webp" alt="image 1" class="w-100 rounded-3"> </div> <div class="col"> <img src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(114).webp" alt="image 1" class="w-100 rounded-3"> </div> </div> -->
+
+
+
+<!-- background: linear-gradient(135deg, #6ec575 0, #3b8686 100%), url('../assets/css/material/images/cover-sidebar-user.jpg') no-repeat;  -->
+<!-- background-size: cover; background-repeat: no-repeat; background-image: url(images/cover-sidebar-user.jpg); background-image: url(../assets/css/material/images/cover-sidebar-user.jpg), linear-gradient(#d13531, #d13531);-->            </div>
+
+        </div>
+
+
+    </div>
+
+    <a href="javascript:;" class="btn btn-icon btn-circle btn-theme btn-scroll-to-top" data-toggle="scroll-to-top"><i class="fa fa-angle-up"></i></a>
+
+    </div>
+
+
+</body>
+
+</html>
+
+
+
+
+
+
+<!-- ================== BEGIN core-js ================== -->
+<script src="https://erp.psit.ac.in/assets/js/vendor.min.js"></script>
+<script src="https://erp.psit.ac.in/assets/js/app.min.js"></script>
+<!-- ================== END core-js ================== -->
+
+<!-- ================== BEGIN page-js ================== -->
+<script src="https://erp.psit.ac.in/assets/plugins/datatables.net/js/dataTables.min.js"></script>
+<script src="https://erp.psit.ac.in/assets/plugins/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
+<script src="https://erp.psit.ac.in/assets/plugins/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+<script src="https://erp.psit.ac.in/assets/plugins/datatables.net-responsive-bs5/js/responsive.bootstrap5.min.js"></script>
+<script src="https://erp.psit.ac.in/assets/js/demo/table-manage-responsive.demo.js"></script>
+<script src="https://erp.psit.ac.in/assets/plugins/@highlightjs/cdn-assets/highlight.min.js"></script>
+<script src="https://erp.psit.ac.in/assets/js/demo/render.highlight.js"></script>
+<!-- ================== END page-js ================== -->
+
+<script>
+    $(document).ready(function() {
+        // App.init();
+        // TableManageTableTools.init();
+    });
+</script>
+
+<script>
+    var options = {
+        dom: '<"row mb-3"<"col-lg-8 d-lg-block"<"d-flex d-lg-inline-flex justify-content-center mb-md-2 mb-lg-0 me-0 me-md-3"l><"d-flex d-lg-inline-flex justify-content-center mb-md-2 mb-lg-0 "B>><"col-lg-4 d-flex d-lg-block justify-content-center"fr>>t<"row mt-3"<"col-md-auto me-auto"i><"col-md-auto ms-auto"p>>',
+        buttons: [{
+                extend: 'copy',
+                className: 'btn-sm'
+            },
+            {
+                extend: 'csv',
+                className: 'btn-sm'
+            },
+            {
+                extend: 'excel',
+                className: 'btn-sm'
+            },
+            {
+                extend: 'pdf',
+                className: 'btn-sm'
+            },
+            {
+                extend: 'print',
+                className: 'btn-sm'
+            }
+        ],
+        responsive: false,
+        colReorder: true,
+        keys: true,
+        rowReorder: false,
+        select: true
+    };
+
+    $('#data-table-buttons').DataTable(options);
+    $('#t1').DataTable(options);
+    $('#t2').DataTable(options);
+    $('#t3').DataTable(options);
+    $('#data-table').DataTable(options);
+</script>
+<script>
+    $(document).ready(function() {
+        $('.likes').on('click', function() {
+            var val = $(this).attr('rel');
+
+            $.ajax({
+                url: 'https://erp.psit.ac.in/Student/SammvadLikes/' + val,
+                success: function(data) {
+                    $('#L' + val).html(data);
+                }
+            });
+        });
+    });
+</script>
+
+
+<script>
+    // Select all <img> elements on the page
+    const images = document.querySelectorAll('.Sammvad img');
+
+    // Define the desired height and width
+    const newHeight = '100%'; // Replace with your desired height
+    const newWidth = '100%'; // Replace with your desired width
+
+    // Loop through each image and update its height and width
+    images.forEach(image => {
+        image.style.height = newHeight;
+        image.style.width = newWidth;
+    });
+</script>
+
+
+<script>
+    // Declare early-access variables (non-blocking)
+    window.isAllowUsersAccessBackendScript = false;
+</script>
+
+<!-- //disable users to access script -->
+<script>
+    function disableViewCodeFromUsers() {
+        // Disable right-click
+        document.addEventListener('contextmenu', e => e.preventDefault());
+
+        // Disable specific keyboard shortcuts
+        document.addEventListener('keydown', e => {
+            // F12
+            if (e.key === 'F12') {
+                e.preventDefault();
+            }
+
+            // Ctrl+Shift+I or Ctrl+Shift+J or Ctrl+U
+            if (
+                (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J')) ||
+                (e.ctrlKey && e.key === 'U') || (e.ctrlKey && e.key === 'u')
+            ) {
+                // alert('fghgh');
+                e.preventDefault();
+            }
+        });
+    }
+
+    // if (isAllowUsersAccessBackendScript == false) disableViewCodeFromUsers();
+</script>
+
+<!-- hiding users to access script -->

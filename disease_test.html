@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Poultry Disease Detection</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.22.0"></script>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; padding: 30px; }
+    h2 { color: #2c3e50; }
+    #preview { margin-top: 20px; max-width: 300px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.3); }
+    #result { margin-top: 20px; font-size: 18px; font-weight: bold; color: #27ae60; }
+  </style>
+</head>
+<body>
+  <h2>🐔 Poultry Disease Detection</h2>
+
+  <input type="file" id="file-upload" accept="image/*"><br><br>
+  <button onclick="analyzeDisease()">Analyze</button>
+  <br>
+  <img id="preview" />
+  <div id="result"></div>
+
+  <script>
+  let model;
+  const labels = ["Coccidiosis", "Healthy", "Newcastle Disease", "Salmonella"];
+
+  // Load the model
+  async function loadModel() {
+      model = await tf.loadLayersModel("poultry_disease_tfjs/model.json");
+      document.getElementById("result").innerText = "✅ Model Loaded. Please upload an image.";
+  }
+  loadModel();
+
+  async function analyzeDisease() {
+      const fileInput = document.getElementById("file-upload");
+      if (fileInput.files.length === 0) {
+          alert("Please upload an image first.");
+          return;
+      }
+
+      const file = fileInput.files[0];
+      const img = document.getElementById("preview");
+      img.src = URL.createObjectURL(file);
+
+      img.onload = async () => {
+          // Draw image on a hidden canvas (safe resize for TF.js)
+          const canvas = document.createElement("canvas");
+          canvas.width = 224;
+          canvas.height = 224;
+          const ctx = canvas.getContext("2d");
+          ctx.drawImage(img, 0, 0, 224, 224);
+
+          // Convert canvas to tensor
+          let tensor = tf.browser.fromPixels(canvas)
+              .toFloat()
+              .div(255.0)
+              .expandDims();
+
+          // Run prediction
+          const prediction = model.predict(tensor);
+          const result = await prediction.array();
+
+          // Get best class
+          const maxIndex = result[0].indexOf(Math.max(...result[0]));
+          const confidence = (result[0][maxIndex] * 100).toFixed(2);
+
+          document.getElementById("result").innerText =
+              `Detected: ${labels[maxIndex]} (Confidence: ${confidence}%)`;
+      };
+  }
+  </script>
+</body>
+</html>
